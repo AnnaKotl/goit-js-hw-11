@@ -22,6 +22,7 @@
     "make-dir": "^4.0.0",
     "modern-normalize": "^1.1.0",
     "notiflix": "^3.2.6",
+    "scroll-to-top": "^1.1.0",
     "semver": "^7.5.3",
     "simplelightbox": "^2.14.1"
   },

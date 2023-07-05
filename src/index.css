@@ -3,6 +3,35 @@ body {
     background: linear-gradient(to left, rgba(238, 201, 218, 1) 0%, rgba(158, 172, 189, 1) 84%);
     margin: 0;
     padding: 30px;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+}
+
+.scroll-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: rgba(10, 30, 77, 1);
+    color: rgb(238, 201, 218);
+    font-size: 20px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.scroll-to-top.show {
+    opacity: 1;
 }
 
 .search-form {
@@ -61,10 +90,10 @@ body {
 }
 
 .load-more {
+    display: none;
+
     justify-content: center;
-    margin-top: 20px;
-    margin-left: auto;
-    margin-right: auto;
+    margin: 20px auto 40px;
     padding: 14px 30px;
     font-size: 16px;
     min-width: 180px;

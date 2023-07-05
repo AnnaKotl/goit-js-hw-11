@@ -1,6 +1,7 @@
 body {
     background: rgb(238, 201, 218);
-    background: radial-gradient(circle, rgba(238, 201, 218, 1) 0%, rgba(158, 172, 189, 1) 84%);     margin: 0;
+    background: linear-gradient(to left, rgba(238, 201, 218, 1) 0%, rgba(158, 172, 189, 1) 84%);    
+    margin: 0;
     padding: 30px;
 }
 
@@ -57,4 +58,67 @@ body {
             -23px 0 20px -23px rgba(0, 0, 0, .6),
             23px 0 20px -23px rgba(0, 0, 0, .6),
             inset 0 0 40px rgba(0, 0, 0, .1);
+}
+/* .......... */
+.load-more {
+    justify-content: center;
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 14px 30px;
+    font-size: 16px;
+    min-width: 180px;
+    border: none;
+    border-radius: 5px;
+    background-color: rgba(10, 30, 77, 1);
+    color: #fff;
+    cursor: pointer;
+    transition: border-color 0.3s ease, box-shadow 0.25s ease, background-color 0.35s ease;
+}
+
+.load-more:hover {
+    background: linear-gradient(0deg, rgba(125, 101, 128, 1) 5%, rgba(10, 30, 77, 1) 95%);
+    box-shadow: 0 1px 4px rgba(0, 0, 0, .3),
+            -23px 0 20px -23px rgba(0, 0, 0, .6),
+            23px 0 20px -23px rgba(0, 0, 0, .6),
+            inset 0 0 40px rgba(0, 0, 0, .1);
+}
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-gap: 20px;
+}
+
+.photo-card {
+    padding: 14px 30px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    width: 300px;
+    margin-right: 10px;
+    transition: border-color 0.3s ease, box-shadow 0.25s ease;
+}
+
+.photo-card:focus {
+    border-color: #007bff;
+    box-shadow: 0 1px 4px rgba(125, 101, 128, 1),
+        -23px 0 20px -23px rgba(10, 30, 77, 1),
+        23px 0 20px -23px rgba(10, 30, 77, 1),
+        inset 0 0 40px rgba(0, 0, 0, 0.1);
+    outline: none;
+}
+
+.photo-card:hover {
+    box-shadow: 0 1px 4px rgba(125, 101, 128, 0.6),
+        -23px 0 20px -23px rgba(10, 30, 77, 0.6),
+        23px 0 20px -23px rgba(10, 30, 77, 0.6),
+        inset 0 0 40px rgba(0, 0, 0, 0.05);
+}
+
+.photo-card img {
+    width: 100%;
+    height: auto;
+    border: 1px solid #ccc;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }

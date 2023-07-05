@@ -20,6 +20,7 @@ loadMoreButton.addEventListener('click', onLoadMore);
 formEl.addEventListener('reset', resetSearch);
 
 
+
 async function onSearch(e) {
   e.preventDefault();
 
@@ -34,14 +35,7 @@ async function onSearch(e) {
   }
 
   await fetchImages();
-};
-
-
-async function onLoadMore() {
-  page++;
-
-  await fetchImages();
-};
+}
 
 async function fetchImages() {
   try {
@@ -83,8 +77,13 @@ async function fetchImages() {
       'An error occurred while fetching images. Please try again later.'
     );
   }
-};
+}
 
+async function onLoadMore() {
+  page++;
+
+  await fetchImages();
+};
 
 function displayImages(images) {
   const cards = images.map(createImageCard);

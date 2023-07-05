@@ -52,7 +52,9 @@ async function fetchImages() {
       params.q = searchQuery;
     }
 
-    const response = await axios.get(BASE_URL, { params });
+    const response = await fetch(`${BASE_URL}?key=${API_KEY}&image_type=photo&orientation=horizontal&safesearch=true&page=${page}&per_page=40&q=${encodeURIComponent(searchQuery)}`);
+    const data = await response.json();
+
 
     const { hits, totalHits } = response.data;
 

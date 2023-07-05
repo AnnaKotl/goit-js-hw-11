@@ -157,4 +157,3 @@ window.addEventListener('scroll', () => {
     scrollToTopButton.classList.remove('show');
   }
 });
-

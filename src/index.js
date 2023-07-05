@@ -19,8 +19,6 @@ formEl.addEventListener('submit', onSearch);
 loadMoreButton.addEventListener('click', onLoadMore);
 formEl.addEventListener('reset', resetSearch);
 
-
-
 async function onSearch(e) {
   e.preventDefault();
 
@@ -52,10 +50,7 @@ async function fetchImages() {
       params.q = searchQuery;
     }
 
-    const response = await fetch(`${BASE_URL}?key=${API_KEY}&image_type=photo&orientation=horizontal&safesearch=true&page=${page}&per_page=40&q=${encodeURIComponent(searchQuery)}`);
-    const data = await response.json();
-
-
+    const response = await axios.get(BASE_URL, { params });
     const { hits, totalHits } = response.data;
 
     if (hits.length > 0) {
@@ -85,14 +80,14 @@ async function onLoadMore() {
   page++;
 
   await fetchImages();
-};
+}
 
 function displayImages(images) {
   const cards = images.map(createImageCard);
   galleryEl.insertAdjacentHTML('beforeend', cards.join(''));
 
   lightbox.refresh();
-};
+}
 
 function createImageCard({
   webformatURL,
@@ -116,20 +111,20 @@ function createImageCard({
       </div>
     </div>
   `;
-};
+}
 
 function clearGallery() {
   galleryEl.innerHTML = '';
   hideLoadMoreButton();
-};
+}
 
 function showLoadMoreButton() {
   loadMoreButton.style.display = 'block';
-};
+}
 
 function hideLoadMoreButton() {
   loadMoreButton.style.display = 'none';
-};
+}
 
 function resetSearch() {
   searchQuery = '';
@@ -138,9 +133,9 @@ function resetSearch() {
   clearGallery();
   hideLoadMoreButton();
   formEl.reset();
-};
+}
 
-// scroll
+// Scroll
 
 const scrollToTopButton = document.getElementById('scrollToTopButton');
 

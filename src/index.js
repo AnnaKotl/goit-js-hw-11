@@ -98,10 +98,13 @@ function createImageCard({
   comments,
   downloads,
 }) {
+  const secureWebformatURL = webformatURL.replace(/^http:/, 'https:');
+  const secureLargeImageURL = largeImageURL.replace(/^http:/, 'https:');
+
   return `
     <div class="photo-card">
-      <a href="${largeImageURL}">
-        <img src="${webformatURL}" alt="${tags}" loading="lazy" />
+      <a href="${secureLargeImageURL}">
+        <img src="${secureWebformatURL}" alt="${tags}" loading="lazy" />
       </a>
       <div class="info">
         <p class="info-item"><b>Likes:</b> ${likes}</p>

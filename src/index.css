@@ -1,6 +1,6 @@
 body {
     background: rgb(238, 201, 218);
-    background: linear-gradient(to left, rgba(238, 201, 218, 1) 0%, rgba(158, 172, 189, 1) 84%);    
+    background: linear-gradient(to left, rgba(238, 201, 218, 1) 0%, rgba(158, 172, 189, 1) 84%);
     margin: 0;
     padding: 30px;
 }
@@ -55,11 +55,11 @@ body {
 .search-form button[type="submit"]:hover {
     background: linear-gradient(0deg, rgba(125, 101, 128, 1) 5%, rgba(10, 30, 77, 1) 95%);
     box-shadow: 0 1px 4px rgba(0, 0, 0, .3),
-            -23px 0 20px -23px rgba(0, 0, 0, .6),
-            23px 0 20px -23px rgba(0, 0, 0, .6),
-            inset 0 0 40px rgba(0, 0, 0, .1);
+        -23px 0 20px -23px rgba(0, 0, 0, .6),
+        23px 0 20px -23px rgba(0, 0, 0, .6),
+        inset 0 0 40px rgba(0, 0, 0, .1);
 }
-/* .......... */
+
 .load-more {
     justify-content: center;
     margin-top: 20px;
@@ -79,9 +79,9 @@ body {
 .load-more:hover {
     background: linear-gradient(0deg, rgba(125, 101, 128, 1) 5%, rgba(10, 30, 77, 1) 95%);
     box-shadow: 0 1px 4px rgba(0, 0, 0, .3),
-            -23px 0 20px -23px rgba(0, 0, 0, .6),
-            23px 0 20px -23px rgba(0, 0, 0, .6),
-            inset 0 0 40px rgba(0, 0, 0, .1);
+        -23px 0 20px -23px rgba(0, 0, 0, .6),
+        23px 0 20px -23px rgba(0, 0, 0, .6),
+        inset 0 0 40px rgba(0, 0, 0, .1);
 }
 
 .gallery {
@@ -121,4 +121,39 @@ body {
     height: auto;
     border: 1px solid #ccc;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 767px) {
+    .search-form {
+        flex-direction: column;
+        height: auto;
+        align-items: stretch;
+    }
+
+    .search-form input[type="text"] {
+        margin-right: 0;
+        margin-bottom: 10px;
+        width: 100%;
+    }
+
+    .search-form button[type="submit"] {
+        margin-right: 0;
+        width: 100%;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+    .gallery {
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    }
+
+    .photo-card {
+        width: 250px;
+    }
+}
+
+@media (min-width: 1024px) {
+    .gallery {
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    }
 }
